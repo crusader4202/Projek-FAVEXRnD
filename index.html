@@ -6,9 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rini's Restaurant</title>
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/CSS/main.css">
 </head>
 <body>
     
+    <div class="login-section">
+        <div class="logo-img"><img src="/Assets/logo.svg" alt=""></div>
+
+        <form action="" method="post">
+                <div>
+                    <label class="text-regular" for="id">Employee ID</label>
+                    <input class="text-regular" type="text" name="id" id="id">
+                </div>
+                <div>
+                    <label class="text-regular" for="">Password</label>
+                    <input class="text-regular" type="text" name="password" id="password">
+                </div>
+                <button class="text-regular login-button button-long">Login</button>
+        </form>
+    </div>
+
+    <div class="signup-section">
+        <div class="left-img"><img src="/Assets/burger.svg" alt=""></div>
+        <div class="right-container">
+            <div class="text-big-bold">Create an Account</div>
+
+            <form action="" method="post">
+                <input class="text-regular input-text" type="text" name="name" placeholder="Full Name">
+                <input class="text-regular input-text" type="number" name="id" placeholder="Employee ID">
+                <input class="text-regular input-text" type="password" name="password" placeholder="Password">
+                <input class="text-regular input-text" type="password" name="password" placeholder="Confirm Password">
+                <div class="radio-wrap">
+                    <div class="radio-input">
+                        <input name="man" type="radio">
+                        <label class="text-regular" for="man">Man</label>
+                    </div>
+                    <div class="radio-input">
+                        <input name="woman" type="radio">
+                        <label class="text-regular" for="woman">Woman</label>
+                    </div>
+                </div>
+                <button class="text-regular signup-button button-long">Create Account</button>
+            </form>
+        </div>
+        
+    </div>
+
 </body>
 </html>
