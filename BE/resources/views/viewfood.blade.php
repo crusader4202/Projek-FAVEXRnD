@@ -10,6 +10,8 @@
     <div>{{$food->nama}}</div>
     <div>{{$food->desc}}</div>
     <div>{{$food->harga}}</div>
+    <div><a href="{{route('viewcategory', $food->category_id)}}">{{$food->category->nama}}</a></div>
+    <div>{{$food->gambar}}</div>
     <img src="{{asset('storage/food/'.$food->gambar)}}" alt="viewphoto.jpg">
 </body>
 </html>

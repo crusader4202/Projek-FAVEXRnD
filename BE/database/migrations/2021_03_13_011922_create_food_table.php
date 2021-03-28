@@ -19,7 +19,8 @@ class CreateFoodTable extends Migration
             $table->text('desc');
             $table->integer('harga');
             $table->string('gambar')->nullable();
-            // $table->foreign('category_id')->references('id')->on('categories');
+            $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

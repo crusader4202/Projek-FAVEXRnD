@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{route('storefood')}}" method="POST" enctype = "multipart/form-data">
+    <form action="{{route('updatefood', $food->id)}}" method="POST" enctype = "multipart/form-data">
         @csrf
+        @method('PATCH')
         <div>
             <label for="">nama</label>
-            <input name="nama"type="text">
+            <input name="nama"type="text" value="{{$food->nama}}">
         </div>
         <div>
             <label for="">category</label>
@@ -23,11 +24,11 @@
         </div>
         <div>
             <label for="">description</label>
-            <textarea name="desc" id="" cols="30" rows="10"></textarea>
+            <textarea name="desc" id="" cols="30" rows="10" value="{{$food->desc}}"></textarea>
         </div>
         <div>
             <label for="">harga</label>
-            <input type="number" name="harga" id="">
+            <input type="number" name="harga" id="" value="{{$food->harga}}">
         </div>
         <div>
             <label for="">gambar</label>
