@@ -11,12 +11,12 @@
 <body>
     
     <div class="login-section">
-        <div class="logo-img"><img src="/Assets/logo.svg" alt=""></div>
+        <div class="logo-img"><img src="/Assets/img/logo.svg" alt=""></div>
 
-        <form action="" method="post">
+        <form class="login-form"" action="" method="post">
                 <div>
                     <label class="text-regular" for="id">Employee ID</label>
-                    <input class="text-regular" type="text" name="id" id="id">
+                    <input class="text-regular" type="number" name="id" id="id">
                 </div>
                 <div>
                     <label class="text-regular" for="">Password</label>
@@ -27,15 +27,15 @@
     </div>
 
     <div class="signup-section">
-        <div class="left-img"><img src="/Assets/burger.svg" alt=""></div>
+        <div class="left-img"><img src="/Assets/img/burger.svg" alt=""></div>
         <div class="right-container">
             <div class="text-big-bold">Create an Account</div>
 
-            <form action="" method="post">
-                <input class="text-regular input-text" type="text" name="name" placeholder="Full Name">
-                <input class="text-regular input-text" type="number" name="id" placeholder="Employee ID">
-                <input class="text-regular input-text" type="password" name="password" placeholder="Password">
-                <input class="text-regular input-text" type="password" name="password" placeholder="Confirm Password">
+            <form class="signup-form" action="" method="post">
+                <input class="text-regular input-text" type="text" name="name" id="name" placeholder="Full Name">
+                <input class="text-regular input-text" type="number" name="id" id="id" placeholder="Employee ID">
+                <input class="text-regular input-text" type="password" name="password" id="password" placeholder="Password">
+                <input class="text-regular input-text" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
                 <div class="radio-wrap">
                     <div class="radio-input">
                         <input name="gender" type="radio">
@@ -51,6 +51,12 @@
         </div>
         
     </div>
+
+    <script src="/Assets/lib/jquery/jquery.min.js"></script>
+    <script src="/JS/main.js"></script>
+    <!-- jquery validate plugin -->
+    <script src="/Assets/lib/jquery-validate-plugin/dist/jquery.validate.js"></script>
+
 
 </body>
 </html>
