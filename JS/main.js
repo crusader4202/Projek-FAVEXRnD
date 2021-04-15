@@ -54,7 +54,7 @@ $(document).ready(function() {
                 required: true,
                 passwordPattern: true
             },
-            confirmPassword: {
+            password_confirmation: {
                 required: true,
                 equalTo: "password"
             },
@@ -74,7 +74,7 @@ $(document).ready(function() {
                 required: "Please input this field",
                 passwordPattern: "Password must contain at least a lower case, an upper case, a number, and 8 digits"
             },
-            confirmPassword: {
+            password_confirmation: {
                 required: "Please input this field",
                 equalTo: "Passwords do not match"
             },
