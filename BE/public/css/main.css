@@ -1,0 +1,85 @@
+@import url("/CSS/base.css");
+
+
+.login-section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0 30px 0;
+}
+
+.logo-img{
+    width: fit-content;
+    margin-left: 50px;
+}
+
+.login-section form{
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.login-section form div{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-section form div:nth-child(2){
+    margin: 0 20px;
+}
+
+.login-section input{
+    height: 25px;
+    width: 200px;
+    padding: 5px 10px;
+}
+
+.login-section button{
+    padding: 5px 25px;
+}
+
+.signup-section{
+    background-color: var(--gray);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 0;
+    justify-content: space-evenly;
+}
+
+.signup-section img{
+    max-width: 700px;
+}
+
+.signup-section form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.signup-section form .input-text{
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+
+.signup-section form .radio-wrap{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.signup-section form .radio-input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.signup-section form .radio-wrap input{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

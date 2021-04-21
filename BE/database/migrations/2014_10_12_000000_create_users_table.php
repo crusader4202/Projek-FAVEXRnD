@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('ID_karyawan')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('gender');
             $table->rememberToken();
             $table->timestamps();
         });

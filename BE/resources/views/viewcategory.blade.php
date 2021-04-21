@@ -8,16 +8,14 @@
 </head>
 <body>
     <div>{{$category->nama}}</div>
-    <h5>food</h5>
     <ul>
         @foreach($category->food as $food)
         <li>
-        <a href="{{route('viewfood', $food->id)}}">{{$food->nama}}</a>
+            <a href="{{route('viewfood', $food->id)}}">{{$food->nama}}</a>
         </li>
         @endforeach
         
     </ul>
-    <div>{{$category->gambar}}</div>
     <img src="{{asset('storage/category/'.$category->gambar)}}" alt="viewphoto.jpg">
 </body>
 </html>

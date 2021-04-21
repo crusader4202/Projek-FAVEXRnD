@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -70,4 +70,101 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rini's Restaurant</title>
+
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+</head>
+<body>
+    
+    <div class="login-section">
+        <div class="logo-img"><img src="{{asset('assets/logo.svg')}}" alt=""></div>
+
+        <form  class="login-form" action="{{ route('login') }}" method="post">
+            @csrf
+                <div>
+                    <label class="text-regular" for="id">Employee ID</label>
+                    <input class="text-regular" type="text" name="id" id="id">
+                    <div>
+                        @if (session('error'))
+                            <div>{{ session('error') }}</div>
+                        @endif
+                    </div>
+                </div>
+                <div>
+                    <label class="text-regular" for="">Password</label>
+                    <input class="text-regular" type="password" name="password" id="password">
+                    <div>
+                        @if (session('error'))
+                            <br>
+                        @endif
+                    </div>
+                </div>
+                
+                <button class="text-regular login-button button-long">Login</button>
+        </form>
+        
+    </div>
+    
+
+    <div class="signup-section">
+        <div class="left-img"><img src="{{asset('assets/burger.svg')}}" alt=""></div>
+        <div class="right-container">
+            <div class="text-big-bold">Create an Account</div>
+
+            <form class="signup-form" action="{{ route('register') }}" method="post">
+                @csrf
+                <input class="text-regular input-text" type="text" name="name" placeholder="Full Name">
+                {{-- @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror --}}
+                <input class="text-regular input-text" type="number" name="id" placeholder="Employee ID">
+                {{-- @error('id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror --}}
+                <input class="text-regular input-text" type="password" name="password" placeholder="Password">
+                {{-- @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror --}}
+                <input class="text-regular input-text" type="password" name="password_confirmation" placeholder="Confirm Password">
+                <div class="radio-wrap">
+                    <div class="radio-input">
+                        <input name="gender" type="radio" value="man">
+                        <label class="text-regular" for="gender">Man</label>
+                    </div>
+                    <div class="radio-input">
+                        <input name="gender" type="radio" value="woman">
+                        <label class="text-regular" for="gender">Woman</label>
+                    </div>
+                </div>
+                {{-- @error('gender')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror --}}
+                <button class="text-regular signup-button button-long">Create Account</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="{{asset('js/jquery/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+    <!-- jquery validate plugin -->
+    <script type="text/javascript" src="{{asset('js/jquery-validate-plugin/dist/jquery.validate.js')}}"></script>
+
+</body>
+</html>

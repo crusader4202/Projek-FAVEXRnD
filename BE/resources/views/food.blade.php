@@ -14,6 +14,7 @@
         <th>gambar</th>
         <th>action</th>
         @foreach ($foods as $food)
+        <tr>
             <td><a href="{{route('viewfood', $food->id)}}">{{$food->nama}}</a></td>
             <td>{{$food->desc}}</td>
             <td>{{$food->harga}}</td>

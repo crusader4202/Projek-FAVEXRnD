@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -40,16 +41,21 @@ class LoginController extends Controller
     }
     public function login(Request $request){
         $this->validate($request, [
-            'ID_karyawan' => 'required|string',
+            'id' => 'required|string',
             'password' => 'required',
         ]);
         $login =  [
-            'ID_karyawan' => $request->ID_karyawan,
+            'ID_karyawan' => $request->id,
             'password' => $request->password
         ];
         if(auth()->attempt($login)){
             return redirect()->route('food');
         }
         return redirect()->route('login')->with(['error' => 'Team Name / Password Incorrect' ]);
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
     }
 }

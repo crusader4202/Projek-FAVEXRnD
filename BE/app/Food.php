@@ -11,5 +11,5 @@ class Food extends Model
         return $this->belongsTo('App\Category');
     }
 
-    protected $fillable = ['nama', 'desc', 'harga', 'gambar'];
+    protected $fillable = ['nama', 'desc', 'harga', 'gambar', 'category_id'];
 }

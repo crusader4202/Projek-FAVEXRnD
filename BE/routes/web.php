@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/viewcategory/{id}', 'AdminController@viewdatacategory')->name('viewcategory');
     Route::get('/editcategory/{id}', 'AdminController@editcategory')->name('editcategory');
     Route::patch('/updatecategory/{id}', 'AdminController@updatecategory')->name('updatecategory');
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 });
 Auth::routes();
 
