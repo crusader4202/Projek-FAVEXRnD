@@ -101,8 +101,8 @@ body{
 #upload_image{
     background: black;
     position: relative;
-    left: 30%;
-    bottom: 8% ;
+    right: 500px;
+    top: 610px;
     border-radius: 27.5px;
     display: table-cell;
     width: 200px;
