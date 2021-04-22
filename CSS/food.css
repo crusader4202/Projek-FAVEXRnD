@@ -75,28 +75,19 @@ body{
 }
 
 .text-big{
-    margin: 0 20px;
-}
-
-.add{
-    width:100%;
-    text-align: right;
-}
-
-.add img{
-    margin-right: 20px;
-    cursor: pointer;
+    margin: 20px;
 }
 
 .category-wrapper{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 1200px;
     margin-bottom: 50px;
 }
 
 .category-wrapper .container1{
-    width: 130px;
-    margin: 10px;
+    width: 10%;
     padding: 10px;
     text-align: center;
     border-radius: 20px;
@@ -124,11 +115,6 @@ body{
     border-radius: 20px;
     height: 30%;
     border: 1px solid rgba(255, 190, 11, 0.7);
-}
-
-.category-wrapper .container2 img{
-    max-width: 40px;
-    max-height: 40px;
 }
 
 .category-wrapper .text-regular-bold{
