@@ -91,7 +91,7 @@
             @csrf
                 <div>
                     <label class="text-regular" for="id">Employee ID</label>
-                    <input class="text-regular" type="text" name="id" id="id">
+                    <input class="text-regular" type="number" name="id" id="id">
                     <div>
                         @if (session('error'))
                             <div>{{ session('error') }}</div>
@@ -107,10 +107,8 @@
                         @endif
                     </div>
                 </div>
-                
                 <button class="text-regular login-button button-long">Login</button>
         </form>
-        
     </div>
     
 
@@ -121,25 +119,25 @@
 
             <form class="signup-form" action="{{ route('register') }}" method="post">
                 @csrf
-                <input class="text-regular input-text" type="text" name="name" placeholder="Full Name">
+                <input class="text-regular input-text" type="text" name="name" id="name" placeholder="Full Name">
                 {{-- @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror --}}
-                <input class="text-regular input-text" type="number" name="id" placeholder="Employee ID">
+                <input class="text-regular input-text" type="number" name="id" id="id" placeholder="Employee ID">
                 {{-- @error('id')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror --}}
-                <input class="text-regular input-text" type="password" name="password" placeholder="Password">
+                <input class="text-regular input-text" type="password" name="password2" id="password2" placeholder="Password">
                 {{-- @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror --}}
-                <input class="text-regular input-text" type="password" name="password_confirmation" placeholder="Confirm Password">
+                <input class="text-regular input-text" type="password" name="password_confirmation" id="confirmPassword" placeholder="Confirm Password">
                 <div class="radio-wrap">
                     <div class="radio-input">
                         <input name="gender" type="radio" value="man">

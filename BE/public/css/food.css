@@ -1,0 +1,226 @@
+@import url("/CSS/base.css");
+
+
+body{
+    width:100%;
+    display: grid;
+    grid-template-areas: "nav main"; 
+    /* ini nav nya hanya sebagai dummy aja soal nya nav yg asil pakai fix bkn grid */
+    grid-template-columns: 150px 1fr;
+}
+
+.nav{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-top: 50px;
+    position: fixed;
+    width: 150px;
+}
+
+.nav div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width:60px;
+    height:60px;
+    border-radius: 50px;
+    margin-bottom:30px;
+    transition: .3s;
+}
+
+.nav div:not(:first-child){
+    filter: brightness(0.5);
+}
+
+.nav div:not(:first-child):hover{
+    background-color: var(--red);
+    transition: .3s;
+    filter: brightness(1);
+}
+
+.nav img{
+    margin: 0 auto;
+}
+
+.nav .tab{
+    cursor: pointer;
+}
+
+.nav .tab img{
+    width: 80%;
+}
+
+.nav-active{
+    background-color: var(--red) !important;
+    transition: .3s !important;
+    filter: brightness(1) !important;
+}
+
+
+.nav div:last-child{
+    margin-top: 70px;
+    margin-bottom: 0;
+}
+
+.main-container{
+    width: 100%;
+    grid-area: main;
+    background-color: #E5E5E5;
+    min-height: 100vh;
+}
+
+.text-big{
+    margin: 20px;
+}
+
+.category-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.category-wrapper .container1{
+    width: 130px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    background-color:white;
+    transition: .3s;
+    cursor:pointer;
+}
+
+.category-wrapper .container1:hover{
+    background-color: rgba(255, 190, 11, 0.7) !important;
+    filter: grayscale(0%) !important;
+    transition: .3s;
+}
+
+.category-active{
+    background-color: rgba(255, 190, 11, 0.7) !important;
+    filter: grayscale(0%) !important;
+    transition: .3s;
+}
+
+.category-wrapper .container2{
+    background-color: white;
+    padding:25px;
+    border-radius: 20px;
+    height: 50px;
+    border: 1px solid rgba(255, 190, 11, 0.7);
+}
+
+.category-wrapper .text-regular-bold{
+    margin: 15px;
+}
+
+.edit-delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: -10px;
+    padding-right: 20px;
+}
+
+.edit-delete img{
+    width: 20px;
+    filter: invert(1) ;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.edit-delete div{
+    cursor: pointer;
+}
+
+.item-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.item-wrapper .container{
+    /* max-height: 250px; */
+    width: 250px;
+    position: relative;
+    background-color:white;
+    padding: 10px;
+    text-align: center;
+    padding: 30px 0;
+    border-radius:20px;
+    margin: 20px;
+}
+
+.item-wrapper .edit-delete{
+    margin-top: -20px;
+}
+
+.item-wrapper .pic{
+    /* max-height: 150px; */
+    max-width: 40px;
+    max-height: 40px;
+    margin: 10px 0;
+}
+
+.item-wrapper .text-regular-bold{
+    color: rgba(196, 196, 196, 1);
+
+}
+
+.item-wrapper .description{
+    font-size: .8rem;
+    color: rgb(68, 68, 68);
+    padding: 10px;
+}
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.pagination img{
+    width: 40px;
+    margin: 20px;
+}
+
+.pagination .number{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.pagination .number div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    margin: 0 5px;
+    transition: .3s;
+    border-radius: 20px;
+}
+
+.pagination .number div:hover{
+    transition: .3s;
+    background-color: var(--red);
+    color: white;
+}
+
+.pagination-active{
+    transition: .3s;
+    background-color: var(--red) !important;
+    color: white !important;
+}
+

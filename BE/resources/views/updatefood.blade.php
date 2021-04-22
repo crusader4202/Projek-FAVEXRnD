@@ -45,59 +45,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Item</title>
-    <link rel="stylesheet" href="{{asset('css/crud.css')}}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Rini's Restaurant</title>
+
+    <link rel="stylesheet" href="{{asset('css/edit.css')}}">
 </head>
 <body>
-<div class="con1">
-        <div class="sidenav">
-             <img id="burger" src="{{asset('assets/PNG_image/burger.png')}}" alt="">
-             <a href="{{route('food')}}"><img id="home" src="{{asset('assets/PNG_image/home.png')}}" alt=""></a>
-             <a href=""><img id="user" src="{{asset('assets/PNG_image/profile.png')}}" alt=""></a>
-             <a href=""><img id="setting" src="{{asset('assets/PNG_image/setting.png')}}" alt=""></a>
-             <a href="{{route('logout')}}"><img id="logout" src="{{asset('assets/PNG_image/logout.png')}}" alt=""></a>
+    <div class="nav">
+        <div><img src="{{asset('assets/img/logo.svg')}}" alt=""></div>
+        <div class="tab home"><a href="{{route('food')}}"><img src="{{asset('assets/img/food-home.svg')}}" alt=""></a></div>
+        <div class="tab profile"><img src="{{asset('assets/img/food-profile.svg')}}" alt=""></div>
+        <div class="tab logout"><a href="{{route('logout')}}"><img src="{{asset('assets/img/food-Log-Out.svg')}}" alt=""></a></div>
+    </div>
+
+    <div class="main-container">
+        <div class="con1">
+            <img class="image_container" src="https://via.placeholder.com/500" alt="">
+                <button id="btn_upload"><p>Upload Picture</p></button>
+        </div>
+        <div class="con2">
+            <div class="form">
+                <form action="{{route('updatefood', $food->id)}}" method="POST" enctype = "multipart/form-data">
+                    @csrf
+                    @method('PATCH')
+                    <input type="file" id="upload_image" name="gambar" accept="image/*">
+                    <p>Edit Item</p>
+                    <br>
+                    <div class="form-name">
+                        <!-- <label for="name">Name</label> -->
+                        <input type="text" id="name" name="nama" placeholder="Name" value="{{$food->nama}}" required>
+                    </div>
+                    <br>
+                    <div class="form-price">
+                        <!-- <label for="price">Price (in RP)</label> -->
+                        <input type="number" id="price" name="harga" placeholder="Price" value="{{$food->harga}}" required>
+                    </div>
+                    <br>
+                    <div class="custom-select">
+                        <select  name="category_id" required>
+                          <option value="0"
+                                  hidden
+                          >Select Category:</option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->nama}}</option>   
+                            @endforeach
+                        </select>
+                      </div>
+                      <br>
+                    <div class="form-desc">
+                        <!-- <label for="description">Description</label> -->
+                        <input type="text" id="description" name="desc" placeholder="Description" value="{{$food->desc}}" required>
+                    </div>
+                    <br>
+                <!-- <input type="submit" id="submit" value="submit" name="submit" class="btn btn-primary"> -->
+                <div class="btn_2">
+                    <button id="btn_cancel" type="reset">Cancel</button>
+                    <button id="btn_save" type="submit">Save</button>
+                </div>
+ 
+                </form>
+            </div>
         </div>
     </div>
-    <div class="con2">
-        <div class="second">
-            <img id="mainimage" src="{asset('storage/food/'.$food->gambar)}}" alt="">
-            <button id="btn_upload">Upload Picture</button>
-        </div>
-    </div>
-    <div class="con3">
-        <p id="txt_profile">Profile</p>
-    </div>
-    <div class="con4">
-        <div class="form">
-            <form action="{{route('updatefood', $food->id)}}" method="POST" enctype = "multipart/form-data">
-                @csrf
-                @method('PATCH')
-                <div class="form-name">
-                    <!-- <label for="name">Name</label> -->
-            <input type="text" id="name" name="nama" placeholder="Name" required value="{{$food->nama}}">
-                </div>
-                <div class="form-price">
-                    <!-- <label for="price">Price (in RP)</label> -->
-                    <input type="number" id="price" name="harga" placeholder="Price" required value="{{$food->harga}}">
-                </div>
-                <div class="form-desc">
-                    <!-- <label for="description">Description</label> -->
-                    <input type="text" id="description" name="desc" placeholder="Description" required value="{{$food->desc}}">
-                </div>
-                <div class="form-image">
-                    <!-- <label for="img">Select image:</label> -->
-                    <input type="file" id="img" name="gambar" accept="image/*">
-                </div>
-                <br>
-            <input type="submit" id="submit" value="submit" name="submit" class="btn btn-primary">
-            </form>
-        </div>
-    </div>
-    <div>
-    
-        <a id="btn_list" href="listmenu.php"><br>List<br></a>
-    </div>
-    
 </body>
-</html>

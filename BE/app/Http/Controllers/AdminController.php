@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Food;
 use App\Category;
 
@@ -10,8 +11,9 @@ class AdminController extends Controller
 {
     //
     public function viewfood(){
-        $foods = Food::all();
-        return view('food', compact('foods'));
+        $foods = DB::table('food')->paginate(2);
+        $categories = Category::all();
+        return view('food', ['foods'=>$foods],compact('categories'));
     }
 
     public function createfood(){
@@ -77,11 +79,6 @@ class AdminController extends Controller
         return redirect('/');
     }
 
-    public function viewcategory(){
-        $categories = Category::all();
-        return view('category', compact('categories'));
-    }
-
     public function createcategory(){
         return view('createcategory');
     }
@@ -92,7 +89,7 @@ class AdminController extends Controller
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('gambar')->getClientOriginalExtension();
             $fileNameToStore = $fileName.'_'.time().'_'.'.'.$extension;
-            $path = $request->file('gambar')->storeAs('public/food', $fileNameToStore);
+            $path = $request->file('gambar')->storeAs('public/category', $fileNameToStore);
         }else{
             $fileNameToStore = 'no-image.jpg';
         }
@@ -111,7 +108,8 @@ class AdminController extends Controller
 
     public function viewdatacategory($id){
         $category = Category::FindOrFail($id);
-        return view('viewcategory', compact('category'));
+        $categories = Category::all();
+        return view('viewcategory', compact('categories', 'category', 'id'));
     }
 
     public function editcategory($id){
@@ -126,7 +124,7 @@ class AdminController extends Controller
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('gambar')->getClientOriginalExtension();
             $fileNameToStore = $fileName.'_'.time().'_'.'.'.$extension;
-            $path = $request->file('gambar')->storeAs('public/food', $fileNameToStore);
+            $path = $request->file('gambar')->storeAs('public/category', $fileNameToStore);
         }else{
             $fileNameToStore = 'no-image.jpg';
         }
@@ -136,5 +134,9 @@ class AdminController extends Controller
             'gambar' => $fileNameToStore
         ]);
         return redirect('/');
+    }
+
+    public function viewprofile(){
+        return view('profile');
     }
 }

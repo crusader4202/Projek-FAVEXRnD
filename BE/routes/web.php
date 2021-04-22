@@ -18,10 +18,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/createfood', 'AdminController@createfood')->name('createfood');
     Route::post('/storefood', 'AdminController@storefood')->name('storefood');
     Route::delete('/deletefood/{id}', 'AdminController@destroyfood')->name('destroyfood');
-    Route::get('/viewfood/{id}', 'AdminController@viewdatafood')->name('viewfood');
     Route::get('/editfood/{id}', 'AdminController@editfood')->name('editfood');
     Route::patch('/updatefood/{id}', 'AdminController@updatefood')->name('updatefood');
-    Route::get('/category', 'AdminController@viewcategory')->name('category');
     Route::get('/createcategory', 'AdminController@createcategory')->name('createcategory');
     Route::post('/storecategory', 'AdminController@storecategory')->name('storecategory');
     Route::delete('/deletecategory/{id}', 'AdminController@destroycategory')->name('destroycategory');
@@ -29,6 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/editcategory/{id}', 'AdminController@editcategory')->name('editcategory');
     Route::patch('/updatecategory/{id}', 'AdminController@updatecategory')->name('updatecategory');
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+    Route::get('/profile', 'AdminController@viewprofile')->name('viewprofile');
 });
 Auth::routes();
 

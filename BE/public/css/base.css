@@ -11,6 +11,10 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
+.text-big{
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+}
 .text-medium-bold{
     font-size: 1.5rem;
     font-family: 'Poppins', sans-serif;

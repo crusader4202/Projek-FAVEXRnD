@@ -50,13 +50,13 @@ $(document).ready(function() {
               required: true,
               exactlength: 10
             },
-            password: {
+            password2: {
                 required: true,
                 passwordPattern: true
             },
-            confirmPassword: {
+            password_confirmation: {
                 required: true,
-                equalTo: "password"
+                equalTo: "#password2"
             },
             gender: {
                 required: true
@@ -70,11 +70,11 @@ $(document).ready(function() {
               required: "Please input this field",
               exactlength: "ID must be 10 digits"
             },
-            password: {
+            password2: {
                 required: "Please input this field",
                 passwordPattern: "Password must contain at least a lower case, an upper case, a number, and 8 digits"
             },
-            confirmPassword: {
+            password_confirmation: {
                 required: "Please input this field",
                 equalTo: "Passwords do not match"
             },
