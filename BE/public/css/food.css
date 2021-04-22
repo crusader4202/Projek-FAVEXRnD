@@ -1,14 +1,5 @@
-@import url("base.css");
+@import url("/CSS/base.css");
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
 
 body{
     width:100%;
@@ -79,6 +70,18 @@ body{
     margin-bottom: 0;
 }
 
+.add{
+    width: 100%;
+    text-align: right;
+    margin-top: -50px;
+    width: 100%;
+   
+}
+
+.add img{
+    margin-right: 20px;
+}
+
 .main-container{
     width: 100%;
     grid-area: main;
@@ -132,7 +135,7 @@ body{
     margin: 15px;
 }
 
-.category-wrapper img{
+.category-wrapper .img{
     width: 40px;
     height: 40px;
 }

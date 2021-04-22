@@ -70,6 +70,18 @@ body{
     margin-bottom: 0;
 }
 
+.add{
+    width: 100%;
+    text-align: right;
+    margin-top: -50px;
+    width: 100%;
+   
+}
+
+.add img{
+    margin-right: 20px;
+}
+
 .main-container{
     width: 100%;
     grid-area: main;
