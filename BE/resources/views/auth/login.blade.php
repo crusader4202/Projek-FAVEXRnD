@@ -153,7 +153,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror --}}
-                <button class="text-regular signup-button button-long">Create Account</button>
+                <button class="text-regular signup-button button-long" type="submit">Create Account</button>
             </form>
         </div>
         

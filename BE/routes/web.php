@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/profile', 'AdminController@viewprofile')->name('viewprofile');
 });
 Auth::routes();
+// Route::get('register', '\App\Http\Controllers\Auth\RegisterController@create')->name('register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
