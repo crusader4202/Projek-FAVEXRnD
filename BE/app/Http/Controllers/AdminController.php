@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     //
     public function viewfood(){
-        $foods = DB::table('food')->paginate(2);
+        $foods = DB::table('food')->paginate(8);
         $categories = Category::all();
         return view('food', ['foods'=>$foods],compact('categories'));
     }

@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 
     // PAGINATION
-    var $pagi = $(".pagination .number div");
+    var $pagi = $(".pagination .number li");
     var last = $pagi.length - 1;
     var first = 0;
     var num = first;

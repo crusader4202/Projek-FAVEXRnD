@@ -224,7 +224,22 @@ body{
     margin-top: 30px;
 }
 
-.pagination img{
+.pagination ul{
+    list-style: none;
+}
+
+.pagination ul li{
+    text-decoration: none;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px 5px;
+    font-size: 30px;
+}
+
+/* .pagination img{
     width: 40px;
     margin: 20px;
 }
@@ -259,4 +274,4 @@ body{
     transition: .3s;
     background-color: var(--red) !important;
     color: white !important;
-}
+} */
