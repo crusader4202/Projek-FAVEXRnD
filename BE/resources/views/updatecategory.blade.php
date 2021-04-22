@@ -13,7 +13,7 @@
     <div class="nav">
         <div><img src="{{asset('assets/img/logo.svg')}}" alt=""></div>
         <div class="tab home"><a href="{{route('food')}}"><img src="{{asset('assets/img/food-home.svg')}}" alt=""></a></div>
-        <div class="tab profile"><img src="{{asset('assets/img/food-profile.svg')}}" alt=""></div>
+        <div class="tab profile"><a href="{{route('viewprofile')}}"><img src="{{asset('assets/img/food-profile.svg')}}" alt=""></a></div>
         <div class="tab logout"><a href="{{route('logout')}}"><img src="{{asset('assets/img/food-Log-Out.svg')}}" alt=""></a></div>
     </div>
 
