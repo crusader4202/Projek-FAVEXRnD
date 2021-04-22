@@ -43,7 +43,6 @@
         <div class="add"><a href="{{route('createcategory')}}"><img src="{{asset('assets/img/food-plus.svg')}}" alt=""></a></div>
         <div class="category-wrapper">
             @foreach ($categories as $target)
-            @if ($id == $target->id)
             <div class="edit-delete">
                 <a href="{{ route('editcategory', $category->id) }}"><img class="edit" src="{{asset('assets/img/food-edit.svg')}}" alt=""></a>
                 <form action="{{ route('destroycategory', $category->id) }}" method="POST">
@@ -52,6 +51,8 @@
                     <button class="text-medium">X</button>
                 </form>
             </div>
+            @if ($id == $target->id)
+            
             <div class="container1 category-active">
                 <div class="container2"><img src="{{asset('assets/img/food-flame.svg')}}" alt=""></div>
                 <div class="text-regular-bold">Hot</div>
@@ -108,7 +109,6 @@
                         <button class="text-medium">X</button>
                     </form>
                 </div>
-                <img class="edit" src="{{asset('assets/img/food-edit.svg')}}" alt="">
                 <img class="pic" src="{{asset('storage/food/'.$food->gambar)}}" alt="">
                 <div class="text-medium-bold">{{$food->nama}}</div>
                 <div class="text-regular-bold">Rp {{$food->harga}}</div>
