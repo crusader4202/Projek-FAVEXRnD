@@ -24,7 +24,7 @@
             <div class="form">
                 <form action="{{route('storefood')}}" method="POST" enctype = "multipart/form-data">
                     @csrf
-                    <input type="file" id="upload_image" name="img" accept="image/*">
+                    <input type="file" id="upload_image" name="gambar" accept="image/*">
                     <p>Create New Item</p>
                     <br>
                     <div class="form-name">

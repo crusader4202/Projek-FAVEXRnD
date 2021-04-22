@@ -100,7 +100,7 @@
                 </div>
                 <div>
                     <label class="text-regular" for="">Password</label>
-                    <input class="text-regular" type="password" name="password" id="password">
+                    <input class="text-regular" type="password" name="password2" id="password2">
                     <div>
                         @if (session('error'))
                             <br>
@@ -131,7 +131,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror --}}
-                <input class="text-regular input-text" type="password" name="password2" id="password2" placeholder="Password">
+                <input class="text-regular input-text" type="password" name="password" id="password" placeholder="Password">
                 {{-- @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

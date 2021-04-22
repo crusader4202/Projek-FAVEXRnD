@@ -42,11 +42,11 @@ class LoginController extends Controller
     public function login(Request $request){
         $this->validate($request, [
             'id' => 'required|string',
-            'password' => 'required',
+            'password2' => 'required',
         ]);
         $login =  [
             'ID_karyawan' => $request->id,
-            'password' => $request->password
+            'password' => $request->password2
         ];
         if(auth()->attempt($login)){
             return redirect()->route('food');

@@ -92,6 +92,7 @@
                 <img class="pic" src="{{asset('storage/food/'.$food->gambar)}}" alt="">
                 <div class="text-medium-bold">{{$food->nama}}</div>
                 <div class="text-regular-bold">Rp {{$food->harga}}</div>
+                <div class="description text-regular">{{$food->desc}}</div>
             </div>
             {{-- @endif --}}
             @endforeach
