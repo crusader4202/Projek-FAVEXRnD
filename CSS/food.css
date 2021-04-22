@@ -135,17 +135,33 @@ body{
     margin: 15px;
 }
 
+.edit-delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: -10px;
+    padding-right: 20px;
+}
+
+.edit-delete img{
+    width: 20px;
+    filter: invert(1) ;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.edit-delete div{
+    cursor: pointer;
+}
+
 .item-wrapper{
     display: flex;
-    /* flex-direction: row;
-     */
     flex-wrap: wrap;
-    /* justify-content: space-evenly; */
     margin-left: 10px;
 }
 
 .item-wrapper .container{
-    max-height: 250px;
+    /* max-height: 250px; */
     width: 250px;
     position: relative;
     background-color:white;
@@ -156,22 +172,25 @@ body{
     margin: 20px;
 }
 
-.item-wrapper .edit{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 30px;
-    cursor: pointer;
+.item-wrapper .edit-delete{
+    margin-top: -20px;
 }
 
 .item-wrapper .pic{
-    height: 60%;
+    max-height: 150px;
+    max-width: 80%;
     margin: 10px 0;
 }
 
 .item-wrapper .text-regular-bold{
     color: rgba(196, 196, 196, 1);
 
+}
+
+.item-wrapper .description{
+    font-size: .8rem;
+    color: rgb(68, 68, 68);
+    padding: 10px;
 }
 
 .pagination{
