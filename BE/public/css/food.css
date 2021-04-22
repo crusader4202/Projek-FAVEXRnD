@@ -112,6 +112,11 @@ body{
     margin-bottom: 50px;
 }
 
+.category-wrapper .container{
+    display: flex;
+    flex-direction: column;
+}
+
 .category-wrapper .container1{
     width: 130px;
     padding: 10px;
